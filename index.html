@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Ticaret</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="" />
+    <style>
+      #carouselExample {
+        margin: 0 auto;
+        width: 80%;
+      }
+      .carousel-item {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(247, 250, 242)">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-success-subtle">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ürünler</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Kategoriler
+              </a>
+              <ul class="dropdown-menu bg-success-subtle" id="categoryList">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                id="sepetButon"
+                class="nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="sepetMiktar">(0)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar-->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Sepet</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="sepetListesi">
+              <!-- Sepet içeriği dinamik olarak burada listelenecek.-->
+            </div>
+            <div class="mt-3">
+              <strong>Toplam Fiyat: <span id="toplamFiyat">0 </span> ₺</strong>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button type="button" class="btn btn-primary">Ödeme Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Search Bar-->
+    <div class="container mt-4">
+      <div class="input-group mb-3 w-50 mx-auto">
+        <input
+          type="text"
+          class="form-control w-50 mx-3"
+          placeholder="Ürün ara.."
+          id="searchInput"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-success" type="button" id="searchButton">
+            Ara
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--Search Bar-->
+    <!-- caoursel -->
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href=""
+            ><img
+              src="https://n11scdn.akamaized.net/a1/org/21/11/04/85/63/23/35/31/47/56/31/24/8738764844480088148.jpg"
+              class="d-block w-100"
+              alt="..."
+          /></a>
+        </div>
+        <div class="carousel-item">
+          <a href=""
+            ><img
+              src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2023/05/30113903/glow-recipe-korean-beauty-products-1600x900.jpg"
+              class="d-block w-100"
+              alt="..."
+          /></a>
+        </div>
+        <div class="carousel-item">
+          <a href=""
+            ><img
+              src="https://www.dodoskin.com/cdn/shop/articles/best-Korean-Skin-Care-products_6a432f2a-5081-47ac-9bb7-310362c68e56_1024x500.jpg?v=1620103543"
+              class="d-block w-100"
+              alt="..."
+          /></a>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- caoursel -->
+
+    <!--Ürünler Listesi-->
+    <div class="container mx-6">
+      <div class="row" id="productList">
+        <!--Ürünler dinamik şekilde API üzerinden buraya yüklenecek.-->
+      </div>
+    </div>
+    <!--Ürünler Listesi-->
+    <!--Footer-->
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">About</a>
+          </li>
+        </ul>
+        <p class="text-center text-muted">© 2022 Company, Inc</p>
+      </footer>
+      <!--Footer-->
+    </div>
+    <script>
+      //temel degiskenler
+      const productList = document.getElementById("productList");
+      const categoryList = document.getElementById("categoryList");
+      const searchButton = document.getElementById("searchButton");
+      const searchInput = document.getElementById("searchInput");
+
+      var products = [];
+
+      function fetchProducts() {
+        fetch("https://dummyjson.com/products")
+          .then((response) => response.json())
+          .then((data) => {
+            products = data.products;
+            // console.log(product);
+            displayProducts(products);
+            displayCategories();
+          });
+      }
+      //utunleri goruntulemek icin fonk
+      function displayProducts(products) {
+        productList.innerHTML = "";
+
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.classList.add("col-md-4", "my-2");
+          card.innerHTML = `
+              <div class="card">
+                <img src="${product.thumbnail}" class="card-img-top img-fluid" style="height: 200px "/>
+                <div class="card-body">
+                  <h5 class="card-title">${product.title}</h5>
+                  <p class="card-text">${product.price} TL</p>
+                  <div class="col-4 ms-auto">
+                  <button class="btn btn-sm btn-success btn-add-to-cart "> SEPETE EKLE </button>
+                  </div>
+                </div>
+              </div>
+              `;
+          //karti urun listesine ekleme
+          productList.appendChild(card);
+
+          //sepete ekle butonuna tiklama olayi !birdaha bak
+          const addToCartButton = card.querySelector(".btn-add-to-cart");
+          addToCartButton.addEventListener("click", () => {
+            sepeteUrunEkle(product);
+          });
+        });
+      }
+      // kategorileri goruntuleme
+      function displayCategories() {
+        const categories = [];
+
+        products.map((product) => {
+          if (!categories.includes(product.category)) {
+            //category API in response ndan donen property adi
+            categories.push(product.category);
+          }
+          categoryList.innerHTML = "";
+          //categories isimli arrayi mapliyoruz
+          categories.map((category) => {
+            const listItem = document.createElement("li");
+            listItem.classList.add("list-group-item");
+            listItem.textContent = category;
+            //tiklayinca o alanin urunleri geliyor
+            listItem.addEventListener("click", () => {
+              const filteredProducts = products.filter(
+                (data) => data.category === category
+              );
+              displayProducts(filteredProducts);
+            });
+            categoryList.appendChild(listItem);
+          });
+        });
+      }
+      searchButton.addEventListener("click", searchProduct);
+      function searchProduct() {
+        const searchItem = searchInput.value.toLowerCase().trim();
+        const searchedProducts = products.filter(
+          (data) =>
+            data.title.toLowerCase().includes(searchItem) ||
+            data.description.toLowerCase().includes(searchItem)
+        );
+        displayProducts(searchedProducts);
+      }
+      var cart = [];
+      //sepete  urun ekleyelim
+      function sepeteUrunEkle(urun) {
+        //Urun ozelliklerini tanimla
+        const sepetItem = {
+          id: urun.id,
+          title: urun.title,
+          price: urun.price,
+          thumbnail: urun.thumbnail,
+          quantity: 1,
+        };
+        for (const item of cart) {
+          if (item.id === sepetItem.id) {
+            item.quantity++;
+            //Sepeti guncelleme yeri
+            updateCartCount();
+            displaySepet();
+            return;
+          }
+        }
+        cart.push(sepetItem);
+        updateCartCount();
+        displaySepet();
+      }
+      //sepetteki urunlerin sayisini guncellemek icin fonk
+      const cartCount = document.getElementById("sepetMiktar");
+      function updateCartCount() {
+        var totalCount = 0;
+        for (var item of cart) {
+          totalCount += item.quantity;
+        }
+        cartCount.textContent = `(${totalCount})`;
+      }
+
+      //Sepetteki Urunleri Goruntuleme
+      function displaySepet() {
+        const sepetListesi = document.getElementById("sepetListesi");
+        const toplamFiyat = document.getElementById("toplamFiyat");
+        //Sepetin icerisindekileri silme
+        sepetListesi.innerHTML = "";
+        //sepet bos ise bos mesaji gonder
+        if (cart.length === 0) {
+          sepetListesi.innerHTML = `
+              <div class="alert alert-warning" role="alert">
+                Sepetinizde urun bulunmamaktadir.</div>
+              `;
+          toplamFiyat.textContent = 0;
+          return;
+        }
+
+        cart.map((item) => {
+          const sepetNesnesi = document.createElement("div");
+          sepetNesnesi.classList.add(
+            "d-flex",
+            "justify-content-between",
+            "align-items-center",
+            "mb-2"
+          );
+
+          sepetNesnesi.innerHTML = `
+              <div class="d-flex align-items-center">
+                <img src=${item.thumbnail} alt=${item.title} width="100px" height="100px"/>
+                <div class="ms-3" >
+                  <p>${item.title}</p>
+                    <p>Fiyat: ${item.price}</p>
+                      <p>Miktar: ${item.quantity}</p>
+                  </div>
+                </div>
+                <button class="btn btn-danger btn-remove-from-cart" data-id="${item.id}">Kaldır</button>
+              `;
+          sepetListesi.appendChild(sepetNesnesi);
+          //sepetteki urunleri kaldirma
+          const removeButton = sepetNesnesi.querySelector(
+            ".btn-remove-from-cart"
+          );
+          removeButton.addEventListener("click", () => {
+            const silinecekId = parseInt(removeButton.getAttribute("data-id"));
+            removeProductCart(silinecekId);
+            displaySepet();
+          });
+        });
+
+        //Toplam fiyat hesaplama
+        const total = cart.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0
+        );
+        toplamFiyat.textContent = total;
+      }
+
+      document
+        .getElementById("sepetButon")
+        .addEventListener("click", displaySepet());
+      // Seppetn urun silme
+      function removeProductCart(productId) {
+        const indexNo = cart.findIndex((item) => item.id === productId);
+        if (indexNo !== -1) {
+          cart.splice(indexNo, 1); //urunu sepetten kaldir
+          updateCartCount();
+        }
+      }
+
+      fetchProducts();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
